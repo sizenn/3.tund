@@ -1,7 +1,11 @@
 <?php
+	$page_title = "Avaleht";
+	$file_name = "home.php";
+?>
+<?php
 	
 	//kopeerime header.php sisu
-	// ../ tähistavad, et fail asub kaust tagasi
+	// ../ tÃ¤histavad, et fail asub kaust tagasi
 	require_once("../header.php");
 	
 ?>

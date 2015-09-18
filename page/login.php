@@ -23,11 +23,11 @@
                                 $password_error = "VEATEADE: Parool on kohustuslik!";
                         } else {
                                
-                                //kui oleme siia jõudnud siis parool ei ole tühi
-                                //kontrollin et olek vähemalt 8 sümbolit pikk
+                                //kui oleme siia jÃµudnud siis parool ei ole tÃ¼hi
+                                //kontrollin et olek vÃ¤hemalt 8 sÃ¼mbolit pikk
                                 if(strlen($_POST["password"]) < 8) {
                                        
-                                        $password_error = "Parool peab olema vähemalt 8 tähemärki pikk!";
+                                        $password_error = "Parool peab olema vÃ¤hemalt 8 tÃ¤hemÃ¤rki pikk!";
                                        
                                 }
                         }
@@ -38,16 +38,14 @@
                
         }
 ?>
-<?php
-        $page_title = "Login leht";
-        $page_file_name = "login.php";
+<?php 
+	$page_title = "Logi sisse";
+	$file_name = "login.php";
+
+
 ?>
 <?php require_once("../header.php"); ?>
-<html>
-<head>
-        <title>sizen's login page</title>
-        <meta charset="UTF-8">
-</head>
+
 <body>
                 <h1>Logi sisse</h1>
                         <form action="login.php" method="post">
