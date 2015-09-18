@@ -3,6 +3,8 @@
         // LOGIN.PHP
         $email_error = "";
         $password_error = "";
+		$name_error = "";
+		$name = "";
         // echo $_POST["email"];
  
         // kontrollime, et keegi vajutas input nuppu
@@ -33,10 +35,27 @@
                         }
                        
                 }
-               
-               
+				
+				//vajutAS create nuppu
+				if(isset($_POST["create"])){
+					if(empty($_POST["name"])) {
+						$name_error = "VEATEADE: Nimi on kohustuslik!";
+					}else {
+						$name = test_input($_POST["name"]);
+					}
+				
+				}
                
         }
+		
+		function test_input($data) {
+			$data = trim($data);
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return $data;
+		}
+		
+		
 ?>
 <?php 
 	$page_title = "Logi sisse";
@@ -54,8 +73,14 @@
                                 Parool:<br>
                                 <input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br><br>
                                 <input name="login" type="submit" value="Logi sisse"><br>
-                        </form>
-<a href="register.php">Pole kasutajat? Registreeri siin!</a>
+						</form>
+								
+						<h2>Create user</h2>
+						<form action="login.php" method="post">
+							<input name="name" type="text" placeholder="Eesnimi Perenimi" value="<?php echo $name ?>" > <?php echo $name_error; ?><br><br>
+							<input name="create" type="submit" value="Loo kasutaja" > <br><br>
+							</form>
+<a href="register.php">Kasutaja puudub? Registreeri siin!</a>
 </body>
 </html>
 <?php require_once("../footer.php"); ?>
